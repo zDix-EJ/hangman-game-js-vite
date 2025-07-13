@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'KarmaFuture';
+	font-style: normal;
+	src: url('/fonts/karma/KarmaFuture.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'KarmaArcade';
+	font-style: normal;
+	src: url('/fonts/karma-arcade/KarmaArcade.ttf') format('truetype');
+}
+
+html {
+	font-family: 'KarmaFuture', sans-serif;
+	transition: background-color 0.3s;
+}

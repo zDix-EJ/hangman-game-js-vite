@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="theme__mono">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hangman Game</title>
+		<!-- Styles -->
+		<link rel="stylesheet" href="./src/css/style.scss" />
+		<!-- Favicons -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/favicons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicons/favicon-16x16.png"
+		/>
+	</head>
+	<body>
+		<div class="switch">
+			<label class="switch__settings">
+				<input id="themeSwitcher" class="toggle" type="checkbox" />
+				<span class="slider"></span>
+				<span class="card-side"></span>
+				<div class="switch__display">
+					<span class="mono">mono</span>
+					<span class="color">color</span>
+				</div>
+			</label>
+		</div>
+
+		<div id="app" class="app">
+			<h1 class="title">‡[ HANGMAN GAME ]‡</h1>
+			<div id="game" class="game">
+				<button id="start" class="game__startBtn">Start Game</button>
+			</div>
+		</div>
+		<script type="module" src="/src/js/main.js"></script>
+	</body>
+</html>
