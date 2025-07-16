@@ -1,8 +1,16 @@
-@import url(./reset.scss); /* Сброс стилей */
+/* Общие */
+@import url(./reset.scss); // Сброс стилей
 
-@import url(./base.scss); /* Базовые настройки страницы */
+@import url(./base.scss); // Базовые настройки страницы
 
-@import url(./theme.scss); /* Цветная тема страницы */
-@import url(./toggle-switcher.scss); /* Переключатель темы */
+/* Стили для UX */
+@import url(./theme.scss); // Цветная тема страницы
+@import url(./toggle-switcher.scss); // Переключатель темы
 
-@import url(./start-menu.scss); /* Стартовое меню игры */
+/* Игра */
+@import url(./start-menu.scss); // Стартовое меню игры
+
+@import url(./game.scss); // Угадываемое слово
+@import url(./keyboard.scss); //Клавиатура
+
+@import url(./end-menu.scss); //Экран окончания игры

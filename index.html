@@ -27,7 +27,7 @@
 		/>
 	</head>
 	<body>
-		<div class="switch">
+		<div id="switcher" class="switch">
 			<label class="switch__settings">
 				<input id="themeSwitcher" class="toggle" type="checkbox" />
 				<span class="slider"></span>
@@ -40,9 +40,12 @@
 		</div>
 
 		<div id="app" class="app">
-			<h1 class="title">‡[ HANGMAN GAME ]‡</h1>
+			<h1 id="logo" class="title">‡[ HANGMAN GAME ]‡</h1>
 			<div id="game" class="game">
-				<button id="start" class="game__startBtn">Start Game</button>
+				<div class="game__btnBox">
+					<button id="start" class="game__btn">Solo</button>
+					<button id="start" class="game__btn">Together</button>
+				</div>
 			</div>
 		</div>
 		<script type="module" src="/src/js/main.js"></script>

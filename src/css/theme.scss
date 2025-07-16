@@ -10,14 +10,33 @@
 	background-color: rgb(223, 171, 1);
 
 	.game {
-		.game__startBtn {
+		.game__btn {
 			background-color: rgb(236, 181, 2);
-			box-shadow: 1px 4px 5px 2px rgba(0, 0, 0, 0.3);
-
-			transition: background-color 0.3s, box-shadow 0.3s;
-
 			&:hover {
 				background-color: rgb(220, 170, 4);
+			}
+		}
+		.keyboard {
+			.keyboard__key {
+				background-color: rgb(236, 181, 2);
+
+				&:hover {
+					background-color: rgb(220, 170, 4);
+				}
+				&:focus {
+					background-color: rgb(245, 245, 245);
+				}
+				&:disabled {
+					background-color: rgb(245, 245, 245);
+				}
+			}
+		}
+		.gameEnd {
+			.gameEnd__btnPlayAgain {
+				background-color: rgb(236, 181, 2);
+				&:hover {
+					background-color: rgb(220, 170, 4);
+				}
 			}
 		}
 	}

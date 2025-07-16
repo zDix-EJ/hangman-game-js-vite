@@ -1,0 +1,38 @@
+.app {
+	.title {
+		.title__startGame {
+			font-size: 3rem;
+		}
+	}
+}
+
+.game {
+	.display {
+		max-width: 280px;
+
+		border: 3px solid black;
+		border-radius: 20px;
+
+		background-color: #c5c3c3;
+		background-image: url(/public/bg-display.png);
+		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 1);
+		z-index: -1;
+	}
+	.letter {
+		font-size: 4rem;
+	}
+	.placeholderLetters {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 15px;
+
+		padding: 30px 0px;
+	}
+	.tries {
+		font-size: 1.25rem;
+		.tries__count {
+			color: black;
+		}
+	}
+}

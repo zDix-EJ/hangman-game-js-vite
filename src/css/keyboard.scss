@@ -1,0 +1,42 @@
+.keyboard {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 25px;
+	justify-content: center;
+
+	max-width: 800px;
+	height: auto;
+
+	margin: auto;
+	padding: 25px;
+
+	.keyboard__key {
+		font-size: 1.5rem;
+
+		border: 2px solid black;
+
+		background-color: rgb(255, 255, 255);
+		box-shadow: 7px 8px 3px 0px rgba(0, 0, 0, 0.5),
+			3px 3px 3px 3px rgba(0, 0, 0, 1);
+
+		padding: 1.25rem;
+
+		transition: background-color 0.3s, scale 0.5s;
+
+		&:hover {
+			background-color: rgb(227, 227, 227);
+			scale: 0.99;
+		}
+
+		&:focus {
+			box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 1) inset;
+		}
+		&:disabled {
+			box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 1) inset;
+			background-color: rgb(245, 245, 245);
+			cursor: not-allowed;
+			scale: 1;
+		}
+	}
+}

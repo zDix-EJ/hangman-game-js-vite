@@ -2,9 +2,14 @@
 
 /* Положение на странице */
 .switch {
-	position: absolute;
-	top: 35px;
-	right: 46.5%;
+	display: flex;
+	justify-content: center;
+
+	width: 100%;
+	height: auto;
+
+	padding-top: 50px;
+	padding-bottom: 100px;
 }
 
 /* Положение указания темы */
