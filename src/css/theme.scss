@@ -32,11 +32,17 @@
 			}
 		}
 		.gameEnd {
-			.gameEnd__btnPlayAgain {
+			.gameEnd__btn {
 				background-color: rgb(236, 181, 2);
 				&:hover {
 					background-color: rgb(220, 170, 4);
 				}
+			}
+		}
+		.game__btnQuit {
+			background-color: rgb(236, 181, 2);
+			&:hover {
+				background-color: rgb(220, 170, 4);
 			}
 		}
 	}

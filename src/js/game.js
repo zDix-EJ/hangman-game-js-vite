@@ -124,7 +124,7 @@ export const startSoloGame = () => {
 			gameEndTriesLeft.textContent = `Tries left: ${triesLeft}`
 
 			gameEndDiv.append(gameEndResult, gameEndTriesLeft)
-			gameEndDiv.innerHTML += `<p class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btnPlayAgain'>Play again</button>`
+			gameEndDiv.innerHTML += `<p class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btn'>Play again</button><button id = 'goMenu' class = 'gameEnd__btn'>Menu</button>`
 
 			gameToHtml.append(gameEndDiv)
 		} else if (result === 'lose') {
@@ -134,10 +134,16 @@ export const startSoloGame = () => {
 			gameEndResult.textContent = 'You Lose!'
 
 			gameEndDiv.append(gameEndResult)
-			gameEndDiv.innerHTML += `<p class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btnPlayAgain'>Play again</button>`
+			gameEndDiv.innerHTML += `<p class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btn'>Play again</button><button id = 'goMenu' class = 'gameEnd__btn'>Menu</button>`
 
 			gameToHtml.append(gameEndDiv)
 		}
+		// const goMenuBtn = document.getElementById('goMenu')
+		// goMenuBtn.addEventListener('click', () => {
+		// 	if (confirm('Are you sure you want to quit?')) {
+		// 		gameFinish('win')
+		// 	}
+		// })
 
 		document.getElementById('playAgain').onclick = startSoloGame
 	}
@@ -170,6 +176,20 @@ export const startSoloGame = () => {
 		}
 	})
 	gameToHtml.appendChild(keyboardInDiv)
+
+	// Кнопка досрочного выхода
+	const quitBtn = document.createElement('button')
+	quitBtn.id = 'quitBtn'
+	quitBtn.classList.add('game__btnQuit')
+	quitBtn.textContent = 'Quit'
+
+	quitBtn.addEventListener('click', () => {
+		if (confirm('Are you sure you want to quit?')) {
+			gameFinish('lose')
+			document.getElementById('quitBtn').remove()
+		}
+	})
+	gameToHtml.appendChild(quitBtn)
 
 	const displayGame = createHangmanImg()
 	gameToHtml.prepend(displayGame)

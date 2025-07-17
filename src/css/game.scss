@@ -35,4 +35,25 @@
 			color: black;
 		}
 	}
+	.game__btnQuit {
+		font-size: 26px;
+		border: 2px solid black;
+		border-radius: 10px;
+
+		margin: 8px 30px;
+		padding: 7px 20px;
+
+		background-color: rgb(255, 255, 255);
+		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 1);
+
+		transition: background-color 0.3s, box-shadow 0.3s;
+
+		&:hover {
+			background-color: rgb(227, 227, 227);
+		}
+
+		&:focus {
+			box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 1) inset;
+		}
+	}
 }

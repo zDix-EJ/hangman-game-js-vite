@@ -13,22 +13,23 @@
 		}
 		.gameEnd__wasWord {
 			font-size: 2rem;
-			font-weight: bol;
+
+			margin-bottom: 15px;
 		}
 		.gameEnd__word {
 			font-weight: bold;
 			text-decoration: underline;
 		}
-		.gameEnd__btnPlayAgain {
+		.gameEnd__btn {
 			font-size: 26px;
 			border: 2px solid black;
 			border-radius: 10px;
 
-			margin: 15px 30px;
+			margin: 8px 30px;
 			padding: 7px 20px;
 
 			background-color: rgb(255, 255, 255);
-			box-shadow: 1px 4px 5px 2px rgba(0, 0, 0, 0.3);
+			box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 1);
 
 			transition: background-color 0.3s, box-shadow 0.3s;
 
@@ -37,7 +38,7 @@
 			}
 
 			&:focus {
-				box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.2) inset;
+				box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 1) inset;
 			}
 		}
 	}
