@@ -4,5 +4,5 @@ import { startSoloGame } from './game'
 
 switchThemeHandle()
 
-const gameStartBtn = document.getElementById('start')
+const gameStartBtn = document.getElementById('startSolo')
 gameStartBtn.addEventListener('click', startSoloGame)

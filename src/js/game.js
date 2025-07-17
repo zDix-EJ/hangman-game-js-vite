@@ -101,6 +101,7 @@ export const startSoloGame = () => {
 	const gameFinish = result => {
 		const word = sessionStorage.getItem('word')
 
+		document.getElementById('quitBtn').remove()
 		document.getElementById('triesLeft').remove()
 		document.getElementById('keyboard').remove()
 		document.getElementById('placeholderLetters').remove()
@@ -110,12 +111,14 @@ export const startSoloGame = () => {
 
 		const gameEndDiv = document.createElement('div')
 		gameEndDiv.classList.add('gameEnd')
+		gameEndDiv.id = 'gameEnd'
 
 		if (result === 'win') {
 			//победа
 			document.getElementById('hangmanImage').src = '/public/img/hg-win.png'
 
 			const gameEndResult = document.createElement('h2')
+			gameEndResult.id = 'result'
 			gameEndResult.className = 'gameEnd__result'
 			gameEndResult.textContent = 'You Win!'
 
@@ -124,28 +127,61 @@ export const startSoloGame = () => {
 			gameEndTriesLeft.textContent = `Tries left: ${triesLeft}`
 
 			gameEndDiv.append(gameEndResult, gameEndTriesLeft)
-			gameEndDiv.innerHTML += `<p class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btn'>Play again</button><button id = 'goMenu' class = 'gameEnd__btn'>Menu</button>`
+			gameEndDiv.innerHTML += `<p id ='wasWord' class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btn'>Play again</button><button id = 'goMenu' class = 'gameEnd__btn'>Menu</button>`
 
 			gameToHtml.append(gameEndDiv)
 		} else if (result === 'lose') {
 			//поражение
 			const gameEndResult = document.createElement('h2')
+			gameEndResult.id = 'result'
 			gameEndResult.className = 'gameEnd__result'
 			gameEndResult.textContent = 'You Lose!'
 
 			gameEndDiv.append(gameEndResult)
-			gameEndDiv.innerHTML += `<p class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btn'>Play again</button><button id = 'goMenu' class = 'gameEnd__btn'>Menu</button>`
+			gameEndDiv.innerHTML += `<p id ='wasWord' class = "gameEnd__wasWord">That was the word: <span class = "gameEnd__word">${word}</span></p><button id = 'playAgain' class = 'gameEnd__btn'>Play again</button><button id = 'goMenu' class = 'gameEnd__btn'>Menu</button>`
 
 			gameToHtml.append(gameEndDiv)
 		}
-		// const goMenuBtn = document.getElementById('goMenu')
-		// goMenuBtn.addEventListener('click', () => {
-		// 	if (confirm('Are you sure you want to quit?')) {
-		// 		gameFinish('win')
-		// 	}
-		// })
 
+		document.getElementById('goMenu').onclick = goMenu
 		document.getElementById('playAgain').onclick = startSoloGame
+	}
+
+	//Кнопка возврата в меню
+
+	const goMenu = () => {
+		document.getElementById('hangmanImage').remove()
+		document.getElementById('result').remove()
+		document.getElementById('wasWord').remove()
+		const triesLeft = document.getElementById('triesLeft')
+		if (triesLeft) triesLeft.remove()
+		document.getElementById('playAgain').remove()
+		document.getElementById('goMenu').remove()
+
+		document.getElementById('gameEnd').remove()
+
+		const title = document.getElementById('logo')
+		title.style.fontSize = '3.5rem'
+		const switcher = document.getElementById('switcher')
+		switcher.style.paddingBottom = '100px'
+
+		const btnBoxDiv = document.createElement('div')
+		btnBoxDiv.classList.add('game__btnBox')
+
+		const startSolo = document.createElement('button')
+		startSolo.classList.add('game__btn')
+		startSolo.id = 'startSolo'
+		startSolo.textContent = 'Solo'
+
+		const startTogether = document.createElement('button')
+		startTogether.classList.add('game__btn')
+		startTogether.id = 'startTogether'
+		startTogether.textContent = 'Together'
+
+		btnBoxDiv.append(startSolo, startTogether)
+		gameToHtml.append(btnBoxDiv)
+
+		document.getElementById('startSolo').onclick = startSoloGame
 	}
 
 	// Вывод в HTML
@@ -186,7 +222,6 @@ export const startSoloGame = () => {
 	quitBtn.addEventListener('click', () => {
 		if (confirm('Are you sure you want to quit?')) {
 			gameFinish('lose')
-			document.getElementById('quitBtn').remove()
 		}
 	})
 	gameToHtml.appendChild(quitBtn)
