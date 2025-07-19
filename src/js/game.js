@@ -45,7 +45,7 @@ const CreateKeyboard = () => {
 
 const createHangmanImg = () => {
 	const image = document.createElement('img')
-	image.src = '/public/img/hg-0.png'
+	image.src = './img/hg-0.png'
 	image.alt = 'hangman image'
 	image.classList.add('display')
 	image.id = 'hangmanImage'
@@ -76,7 +76,7 @@ export const startSoloGame = () => {
 			updateTriesCount(triesLeft)
 
 			const hangmanImg = document.getElementById('hangmanImage')
-			hangmanImg.src = `/public/img/hg-${10 - triesLeft}.png`
+			hangmanImg.src = `./img/hg-${10 - triesLeft}.png`
 
 			if (triesLeft === 0) {
 				gameFinish('lose')
@@ -115,7 +115,8 @@ export const startSoloGame = () => {
 
 		if (result === 'win') {
 			//победа
-			document.getElementById('hangmanImage').src = '/public/img/hg-win.png'
+
+			document.getElementById('hangmanImage').src = './img/hg-win.png'
 
 			const gameEndResult = document.createElement('h2')
 			gameEndResult.id = 'result'
