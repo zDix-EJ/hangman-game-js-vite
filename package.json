@@ -1,15 +1,17 @@
 {
-  "name": "hangman-game-js-vite",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "sass-embedded": "^1.89.2",
-    "vite": "^7.0.3"
-  }
+	"name": "hangman-game-js-vite",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"deploy": "gh-pages -d build"
+	},
+	"devDependencies": {
+		"gh-pages": "^6.3.0",
+		"sass-embedded": "^1.89.2",
+		"vite": "^7.0.3"
+	}
 }
