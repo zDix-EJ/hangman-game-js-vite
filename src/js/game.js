@@ -1,5 +1,4 @@
 import { WORD } from './words-solo' //Массив слов для режима "Solo"
-// import { IMAGINARY } from './together'
 
 import { keyBoardLetters } from './keyboard' //Буквы для клавиатуры
 
